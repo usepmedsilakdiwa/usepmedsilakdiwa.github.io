@@ -1,0 +1,56 @@
+[
+  {
+    "number": "01",
+    "title": "Comprehensive Health History",
+    "category": "history",
+    "categoryLabel": "History Taking",
+    "description": "A structured approach to gathering patient information through effective interviewing and systematic health history assessment.",
+    "image": "images/projects/history-taking.jpg",
+    "href": "projects/project-1.html"
+  },
+  {
+    "number": "02",
+    "title": "General Physical Examination",
+    "category": "examination",
+    "categoryLabel": "Physical Examination",
+    "description": "Documentation of foundational examination techniques and general survey findings.",
+    "image": "images/projects/general-exam.jpg",
+    "href": "projects/project-2.html"
+  },
+  {
+    "number": "03",
+    "title": "Systemic Examination",
+    "category": "examination",
+    "categoryLabel": "Physical Examination",
+    "description": "A systematic approach to examining relevant body systems and documenting findings.",
+    "image": "images/projects/systemic-exam.jpg",
+    "href": "projects/project-3.html"
+  },
+  {
+    "number": "04",
+    "title": "Diagnostic Procedures",
+    "category": "skills",
+    "categoryLabel": "Diagnostic Skills",
+    "description": "Practical exercises focused on essential clinical and diagnostic skills.",
+    "image": "images/projects/diagnostic-skills.jpg",
+    "href": "projects/project-4.html"
+  },
+  {
+    "number": "05",
+    "title": "Case Studies",
+    "category": "skills",
+    "categoryLabel": "Clinical Reasoning",
+    "description": "Application of clinical knowledge to patient scenarios and diagnostic problems.",
+    "image": "images/projects/case-studies.jpg",
+    "href": "projects/project-5.html"
+  },
+  {
+    "number": "06",
+    "title": "Reflections",
+    "category": "reflection",
+    "categoryLabel": "Learning Reflections",
+    "description": "Personal reflections on learning, clinical development, and professional growth.",
+    "image": "images/projects/reflections.jpg",
+    "href": "projects/project-6.html"
+  }
+]

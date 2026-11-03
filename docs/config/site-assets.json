@@ -1,0 +1,76 @@
+{
+  "fonts": {
+    "heading": {
+      "family": "Manrope",
+      "files": [
+        "fonts/Manrope-Variable.woff2"
+      ],
+      "weight": "200 800",
+      "usage": "Headings, project titles, navigation, prominent labels"
+    },
+    "body": {
+      "family": "DM Sans",
+      "files": [
+        "fonts/DMSans-Variable.woff2"
+      ],
+      "weight": "100 1000",
+      "usage": "Body copy, descriptions, buttons, metadata"
+    }
+  },
+  "images": {
+    "universitySeal": {
+      "src": "images/usep-seal.png",
+      "alt": "University of Southeastern Philippines seal",
+      "usage": "Header, hero and footer branding"
+    },
+    "heroBackground": {
+      "src": "images/hero-campus.jpg",
+      "alt": "University campus",
+      "usage": "Optional subtle hero background image"
+    },
+    "projects": [
+      {
+        "id": "history-taking",
+        "src": "images/projects/history-taking.jpg",
+        "alt": "Stethoscope and patient history form",
+        "title": "Comprehensive Health History",
+        "category": "history"
+      },
+      {
+        "id": "general-exam",
+        "src": "images/projects/general-exam.jpg",
+        "alt": "Clinical examination of a patient's wrist",
+        "title": "General Physical Examination",
+        "category": "examination"
+      },
+      {
+        "id": "systemic-exam",
+        "src": "images/projects/systemic-exam.jpg",
+        "alt": "Clinical examination tools and notes",
+        "title": "Systemic Examination",
+        "category": "examination"
+      },
+      {
+        "id": "diagnostic-skills",
+        "src": "images/projects/diagnostic-skills.jpg",
+        "alt": "Clinical diagnostic practice",
+        "title": "Diagnostic Procedures",
+        "category": "skills"
+      },
+      {
+        "id": "case-studies",
+        "src": "images/projects/case-studies.jpg",
+        "alt": "Clinical case notes",
+        "title": "Case Studies",
+        "category": "skills"
+      },
+      {
+        "id": "reflections",
+        "src": "images/projects/reflections.jpg",
+        "alt": "Medical student notebook",
+        "title": "Reflections",
+        "category": "reflection"
+      }
+    ]
+  }
+}
