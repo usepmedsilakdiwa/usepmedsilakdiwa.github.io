@@ -56,8 +56,10 @@
         <div class="hero-caption"><span class="caption-dot"></span> A record of learning and clinical growth</div>
       </div>
     </div>
-    <div class="hero-bottom container">
-      <span>ACADEMIC EXCELLENCE</span><span>CLINICAL COMPETENCE</span><span>COMPASSIONATE CARE</span>
+    <div class="hero-bottom container" aria-label="Core values">
+      <div class="value-highlight reveal"><span class="value-mark" aria-hidden="true">01</span><span>Academic Excellence</span></div>
+      <div class="value-highlight reveal"><span class="value-mark" aria-hidden="true">02</span><span>Clinical Competence</span></div>
+      <div class="value-highlight reveal"><span class="value-mark" aria-hidden="true">03</span><span>Compassionate Care</span></div>
     </div>
   </section>
 
@@ -76,27 +78,27 @@
         <button class="filter-button" data-filter="reflection" aria-pressed="false">Reflections</button>
       </div>
       <div class="project-grid" id="project-grid" aria-live="polite">
-        <article class="project-card reveal" data-category="history">
+        <article class="project-card reveal" data-category="history" data-groups='["history"]'>
           <a class="project-thumb" href="projects/project-1.html"><img src="images/projects/history-taking.jpg" alt="Stethoscope and patient history form"><span>01</span></a>
           <div class="project-card-body"><p class="card-category">History Taking</p><h3><a href="projects/project-1.html">Comprehensive Health History</a></h3><p>A structured approach to gathering patient information through effective interviewing.</p><a class="text-link" href="projects/project-1.html">View project <span>→</span></a></div>
         </article>
-        <article class="project-card reveal" data-category="examination">
+        <article class="project-card reveal" data-category="examination" data-groups='["examination"]'>
           <a class="project-thumb" href="projects/project-2.html"><img src="images/projects/general-exam.jpg" alt="General physical examination"><span>02</span></a>
           <div class="project-card-body"><p class="card-category">Physical Examination</p><h3><a href="projects/project-2.html">General Physical Examination</a></h3><p>Foundational examination techniques and general survey findings.</p><a class="text-link" href="projects/project-2.html">View project <span>→</span></a></div>
         </article>
-        <article class="project-card reveal" data-category="examination">
+        <article class="project-card reveal" data-category="examination" data-groups='["examination"]'>
           <a class="project-thumb" href="projects/project-3.html"><img src="images/projects/systemic-exam.jpg" alt="Clinical examination notes and tools"><span>03</span></a>
           <div class="project-card-body"><p class="card-category">Physical Examination</p><h3><a href="projects/project-3.html">Systemic Examination</a></h3><p>A systematic approach to examining body systems and documenting findings.</p><a class="text-link" href="projects/project-3.html">View project <span>→</span></a></div>
         </article>
-        <article class="project-card reveal" data-category="skills">
+        <article class="project-card reveal" data-category="skills" data-groups='["skills"]'>
           <a class="project-thumb" href="projects/project-4.html"><img src="images/projects/diagnostic-skills.jpg" alt="Clinical diagnostic practice"><span>04</span></a>
           <div class="project-card-body"><p class="card-category">Diagnostic Skills</p><h3><a href="projects/project-4.html">Diagnostic Procedures</a></h3><p>Practical exercises focused on essential clinical and diagnostic skills.</p><a class="text-link" href="projects/project-4.html">View project <span>→</span></a></div>
         </article>
-        <article class="project-card reveal" data-category="skills">
+        <article class="project-card reveal" data-category="skills" data-groups='["skills"]'>
           <a class="project-thumb" href="projects/project-5.html"><img src="images/projects/case-studies.jpg" alt="Clinical case notes"><span>05</span></a>
           <div class="project-card-body"><p class="card-category">Clinical Reasoning</p><h3><a href="projects/project-5.html">Case Studies</a></h3><p>Applying clinical knowledge to patient scenarios and diagnostic problems.</p><a class="text-link" href="projects/project-5.html">View project <span>→</span></a></div>
         </article>
-        <article class="project-card reveal" data-category="reflection">
+        <article class="project-card reveal" data-category="reflection" data-groups='["reflection"]'>
           <a class="project-thumb" href="projects/project-6.html"><img src="images/projects/reflections.jpg" alt="Medical student notebook"><span>06</span></a>
           <div class="project-card-body"><p class="card-category">Learning Reflections</p><h3><a href="projects/project-6.html">Reflections</a></h3><p>Insights on learning, clinical development, and professional growth.</p><a class="text-link" href="projects/project-6.html">View project <span>→</span></a></div>
         </article>
@@ -108,12 +110,13 @@
 
 <footer class="site-footer">
   <div class="container footer-main">
-    <a class="brand footer-brand" href="#top"><img src="images/usep-seal.png" alt=""><span class="brand-copy"><strong>SILAKDIWA</strong><small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small></span></a>
+    <a class="brand footer-brand" href="#top" aria-label="SILAKDIWA home"><img class="brand-seal footer-seal" src="images/usep-seal.png" alt="USEP seal"><span class="brand-copy"><strong>SILAKDIWA</strong><small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small></span></a>
     <div class="footer-student"><strong>Zandro Justine F. Labasano</strong><span>University of Southeastern Philippines</span><span>School of Medicine</span></div>
     <p class="footer-quote">“To see, to listen, to feel,<br>and to understand.”<small>— The art of physical diagnosis</small></p>
   </div>
   <div class="footer-bottom">© <span id="current-year">2026</span> SILAKDIWA. Academic E-Portfolio.</div>
 </footer>
+<script src="plugins/shuffle/shuffle.min.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>

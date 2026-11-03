@@ -28,21 +28,45 @@
   }
 
   const filterButtons = document.querySelectorAll(".filter-button");
-  const projectCards = document.querySelectorAll(".project-card");
+  const projectGrid = document.querySelector("#project-grid");
+  const projectCards = projectGrid
+    ? Array.from(projectGrid.querySelectorAll(".project-card"))
+    : [];
+
+  // Use the exact Shuffle.js library included in Thomson's docs build.
+  // Shuffle handles the vanish/shrink, staggered opacity, and animated
+  // repositioning of the remaining cards after each filter selection.
+  let projectShuffle = null;
+  if (projectGrid && projectCards.length && window.Shuffle) {
+    projectShuffle = new window.Shuffle(projectGrid, {
+      itemSelector: ".project-card",
+      speed: 650,
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+      gutterWidth: 0,
+      staggerAmount: 35,
+      staggerAmountMax: 180,
+      useTransforms: true,
+      filterMode: window.Shuffle.FilterMode.ANY
+    });
+  }
 
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
+      const filter = button.dataset.filter || "all";
       filterButtons.forEach(item => {
         const active = item === button;
         item.classList.toggle("is-active", active);
         item.setAttribute("aria-pressed", String(active));
       });
 
-      projectCards.forEach(card => {
-        const visible = filter === "all" || card.dataset.category === filter;
-        card.hidden = !visible;
-      });
+      if (projectShuffle) {
+        projectShuffle.filter(filter);
+      } else {
+        // Graceful fallback if the plugin is unavailable.
+        projectCards.forEach(card => {
+          card.hidden = !(filter === "all" || card.dataset.category === filter);
+        });
+      }
     });
   });
 
