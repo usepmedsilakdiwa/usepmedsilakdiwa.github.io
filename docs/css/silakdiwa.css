@@ -108,47 +108,54 @@ button{font:inherit}
 @media(max-width:900px){.hero{padding-top:60px}.hero-grid{grid-template-columns:1fr .65fr;gap:20px}.hero-shape-red{width:40%;height:58%}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-main{grid-template-columns:1fr 1fr}.footer-quote{grid-column:1/-1;text-align:center}}
 @media(max-width:680px){.container{width:min(100% - 34px,var(--container))}.nav-shell{min-height:72px}.brand-seal{width:43px;height:43px}.brand-copy strong{font-size:21px}.brand-copy small{font-size:8px}.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--red-dark);padding:8px 20px 16px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 12px 20px #0002}.nav-links.is-open{display:flex}.nav-link{padding:12px 5px}.nav-link:after{display:none}.hero{padding:49px 0 20px;background:#fff}.hero-shape-red{width:38%;height:32%;opacity:.08}.hero-shape-green{width:100%;height:19%;opacity:.12;clip-path:none}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(37px,11vw,54px);letter-spacing:-1.8px}.hero-intro{font-size:16px}.hero-visual{min-height:auto;margin-top:30px}.seal-frame{width:170px}.hero-bottom{margin-top:35px;gap:10px;justify-content:flex-start}.section-pad{padding:62px 0}.project-grid{grid-template-columns:1fr;gap:17px}.project-thumb{aspect-ratio:1.8}.filter-row{gap:7px}.filter-button{font-size:10px;padding:7px 11px}.footer-main{grid-template-columns:1fr;gap:20px;text-align:center}.footer-brand{justify-content:center}.footer-quote{grid-column:auto}.footer-student{text-align:center}}
 
+/* --- 3-COLUMN 3-ROW INFINITE STACKING GRID ENGINE --- */
+.project-grid {
+  display: block !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  min-height: 650px !important;
+}
 
-/* Thomson's Shuffle.js portfolio layout and responsive column sizing.
-   Shuffle absolutely positions cards and animates their transforms/opacity. */
-.project-grid{
-  display:block;
-  position:relative;
-  overflow:hidden;
-  width:100%;
-  min-height:1px;
+.project-card {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  /* 3 columns across with proper spacing */
+  width: calc(33.333333% - 24px) !important;
+  margin-bottom: 0 !important;
+  box-sizing: border-box !important;
+  background: white !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 15px #172a1c08 !important;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 500ms ease !important;
+  will-change: transform, opacity !important;
 }
-.project-card{
-  width:calc(33.333333% - 24px);
-  margin:0 24px 24px 0;
-  box-sizing:border-box;
-  transition:opacity 650ms cubic-bezier(.22,1,.36,1),
-             transform 650ms cubic-bezier(.22,1,.36,1),
-             visibility 650ms cubic-bezier(.22,1,.36,1);
+
+.project-card.shuffle-item--hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: scale(0.8) translateY(20px) !important;
 }
-.project-card.shuffle-item--hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
+
+.project-card.shuffle-item--visible {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
-.project-card.shuffle-item--visible{
-  opacity:1;
-  visibility:visible;
-}
-@media(max-width:900px){
-  .project-card{
-    width:calc(50% - 18px);
-    margin-right:18px;
+
+@media (max-width: 900px) {
+  .project-card {
+    width: calc(50% - 16px) !important;
   }
 }
-@media(max-width:680px){
-  .project-grid{overflow:hidden}
-  .project-card{
-    width:100%;
-    margin-right:0;
-    margin-bottom:17px;
+
+@media (max-width: 680px) {
+  .project-card {
+    width: 100% !important;
   }
-}
-@media(prefers-reduced-motion:reduce){
-  .project-card{transition:none!important}
 }

@@ -1,7 +1,8 @@
-/* Native JavaScript: accessible mobile nav, project filters, reveal-on-scroll. */
+/* Native JavaScript: Guaranteed Animated Filtering */
 (() => {
   "use strict";
 
+  // Mobile nav toggle
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
 
@@ -17,59 +18,81 @@
         navToggle.setAttribute("aria-expanded", "false");
       });
     });
-
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        navLinks.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.focus();
-      }
-    });
   }
 
+  const gridElement = document.querySelector("#project-grid");
   const filterButtons = document.querySelectorAll(".filter-button");
-  const projectGrid = document.querySelector("#project-grid");
-  const projectCards = projectGrid
-    ? Array.from(projectGrid.querySelectorAll(".project-card"))
-    : [];
+  const cards = gridElement ? Array.from(gridElement.querySelectorAll(".project-card")) : [];
 
-  // Use the exact Shuffle.js library included in Thomson's docs build.
-  // Shuffle handles the vanish/shrink, staggered opacity, and animated
-  // repositioning of the remaining cards after each filter selection.
-  let projectShuffle = null;
-  if (projectGrid && projectCards.length && window.Shuffle) {
-    projectShuffle = new window.Shuffle(projectGrid, {
+  let shuffleInstance = null;
+
+  // Attempt to initialize Shuffle.js
+  if (gridElement && window.Shuffle) {
+    try {
+      shuffleInstance = new window.Shuffle(gridElement, {
       itemSelector: ".project-card",
-      speed: 650,
-      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-      gutterWidth: 0,
-      staggerAmount: 35,
-      staggerAmountMax: 180,
+      speed: 450,
+      easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+      gutterWidth: 24, // Matches the spacing between columns
+      columnThreshold: 0.01,
       useTransforms: true,
       filterMode: window.Shuffle.FilterMode.ANY
-    });
+      });
+      console.log("🟢 Shuffle.js loaded and active!");
+    } catch (e) {
+      console.warn("⚠️ Shuffle initialization error:", e);
+    }
+  } else {
+    console.log("🟡 window.Shuffle not detected. Using guaranteed CSS transition animation fallback.");
   }
 
+  // Filter button event listeners
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      const filter = button.dataset.filter || "all";
-      filterButtons.forEach(item => {
-        const active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-pressed", String(active));
+      const filterGroup = button.dataset.group || "all";
+
+      filterButtons.forEach(btn => {
+        const isActive = btn === button;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
       });
 
-      if (projectShuffle) {
-        projectShuffle.filter(filter);
+      if (shuffleInstance) {
+        // Use Shuffle.js if available
+        if (filterGroup === "all") {
+          shuffleInstance.filter(window.Shuffle.ALL_ITEMS);
+        } else {
+          shuffleInstance.filter(filterGroup);
+        }
       } else {
-        // Graceful fallback if the plugin is unavailable.
-        projectCards.forEach(card => {
-          card.hidden = !(filter === "all" || card.dataset.category === filter);
+        // GUARANTEED ANIMATED FALLBACK (Smooth Fade & Scale)
+        cards.forEach(card => {
+          const groupsAttr = card.getAttribute("data-groups") || "";
+          const matches = filterGroup === "all" || groupsAttr.includes(filterGroup);
+
+          if (matches) {
+            card.style.display = "";
+            card.style.transition = "opacity 400ms ease, transform 400ms ease";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1)";
+            }, 20);
+          } else {
+            card.style.transition = "opacity 300ms ease, transform 300ms ease";
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.9)";
+            setTimeout(() => {
+              if (card.style.opacity === "0") {
+                card.style.display = "none";
+              }
+            }, 300);
+          }
         });
       }
     });
   });
 
+  // Reveal on scroll observer
   const revealItems = document.querySelectorAll(".reveal");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

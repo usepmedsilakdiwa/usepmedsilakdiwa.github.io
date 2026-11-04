@@ -6,12 +6,6 @@
   <meta name="theme-color" content="#a90808">
   <meta name="description" content="SILAKDIWA — Physical Diagnosis E-Portfolio of Zandro Justine F. Labasano, University of Southeastern Philippines School of Medicine.">
   <title>SILAKDIWA | Zandro Justine F. Labasano</title>
-  <link rel="preload" href="fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/DMSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <!-- Keep the original Thomson theme stylesheet and icon assets if present. -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/silakdiwa.css">
 </head>
 <body>
@@ -70,11 +64,11 @@
         <p>A structured collection of Physical Diagnosis requirements, practical exercises, and reflections.</p>
       </div>
       <div class="filter-row reveal" role="group" aria-label="Filter projects">
-        <button class="filter-button is-active" data-filter="all" aria-pressed="true">All projects</button>
-        <button class="filter-button" data-filter="history" aria-pressed="false">History taking</button>
-        <button class="filter-button" data-filter="examination" aria-pressed="false">Physical examination</button>
-        <button class="filter-button" data-filter="skills" aria-pressed="false">Diagnostic skills</button>
-        <button class="filter-button" data-filter="reflection" aria-pressed="false">Reflections</button>
+        <button class="filter-button is-active" data-group="all" aria-pressed="true">All projects</button>
+        <button class="filter-button" data-group="history" aria-pressed="false">History taking</button>
+        <button class="filter-button" data-group="examination" aria-pressed="false">Physical examination</button>
+        <button class="filter-button" data-group="skills" aria-pressed="false">Diagnostic skills</button>
+        <button class="filter-button" data-group="reflection" aria-pressed="false">Reflections</button>
       </div>
       <div class="project-grid" id="project-grid" aria-live="polite">
         <article class="project-card reveal" data-category="history" data-groups='["history"]'>
@@ -115,7 +109,7 @@
   </div>
   <div class="footer-bottom">© <span id="current-year">2026</span> SILAKDIWA. Academic E-Portfolio.</div>
 </footer>
-<script src="plugins/shuffle/shuffle.min.js" defer></script>
+<script src="plugins/shuffle/shuffle.min.js"></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
