@@ -1,0 +1,83 @@
+[
+  {
+    "number": "01",
+    "title": "Comprehensive History Taking",
+    "category": "laboratories",
+    "categoryLabel": "Laboratory Activities",
+    "description": "A structured approach to gathering patient information through effective interviewing and systematic health history assessment.",
+    "image": "images/projects/history-taking.jpg",
+    "href": "projects/project-1.html"
+  },
+  {
+    "number": "02",
+    "title": "Sensitivity and Specificity",
+    "category": "laboratories",
+    "categoryLabel": "Laboratory Activities",
+    "description": "Evaluating diagnostic test performance metrics, predictive values, and clinical decision-making reliability.",
+    "image": "images/projects/general-exam.jpg",
+    "href": "projects/project-2.html"
+  },
+  {
+    "number": "03",
+    "title": "Vital Signs Taking",
+    "category": "laboratories",
+    "categoryLabel": "Laboratory Activities",
+    "description": "Foundational assessment techniques for measuring core physiological parameters and vital baselines.",
+    "image": "images/projects/systemic-exam.jpg",
+    "href": "projects/project-3.html"
+  },
+  {
+    "number": "04",
+    "title": "Syphilis Case Study",
+    "category": "laboratories",
+    "categoryLabel": "Laboratory Activities",
+    "description": "Clinical case analysis investigating pathology, serological testing, and patient management protocols.",
+    "image": "images/projects/diagnostic-skills.jpg",
+    "href": "projects/project-4.html"
+  },
+  {
+    "number": "05",
+    "title": "Bronchial Asthma",
+    "category": "laboratories",
+    "categoryLabel": "Laboratory Activities",
+    "description": "Respiratory examination findings, auscultation patterns, and pathophysiological evaluation of airway obstruction.",
+    "image": "images/projects/case-studies.jpg",
+    "href": "projects/project-5.html"
+  },
+  {
+    "number": "06",
+    "title": "Comprehensive History Taking and Physical Diagnosis",
+    "category": "laboratories",
+    "categoryLabel": "Laboratory Activities",
+    "description": "Hospital exposure and integrated clinical assessment synthesizing patient history with thorough physical examination.",
+    "image": "images/projects/reflections.jpg",
+    "href": "projects/project-6.html"
+  },
+  {
+    "number": "07",
+    "title": "Curriculum Vitae",
+    "category": "cv",
+    "categoryLabel": "Curriculum Vitae",
+    "description": "Professional background, academic credentials, biological sciences training, and medical school development.",
+    "image": "images/projects/history-taking.jpg",
+    "href": "projects/cv.html"
+  },
+  {
+    "number": "08",
+    "title": "Gallery",
+    "category": "miscellaneous",
+    "categoryLabel": "Miscellaneous",
+    "description": "Visual documentation of medical school life, clinical postings, and collaborative learning moments.",
+    "image": "images/projects/general-exam.jpg",
+    "href": "projects/gallery.html"
+  },
+  {
+    "number": "09",
+    "title": "Interactive Demos & Mini Games",
+    "category": "miscellaneous",
+    "categoryLabel": "Miscellaneous",
+    "description": "Interactive web demos and biomedical educational mini-games built from game development roots.",
+    "image": "images/projects/diagnostic-skills.jpg",
+    "href": "projects/games.html"
+  }
+]
