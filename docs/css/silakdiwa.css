@@ -122,48 +122,57 @@ button{font:inherit}
 .filter-button:hover,.filter-button.is-active{background:var(--red);border-color:var(--red);color:white}
 .filter-button:focus-visible,.nav-link:focus-visible,.button:focus-visible,a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 
-/* SHUFFLE GRID & UNIFORM CARDS */
+/* BULLETPROOF 3-COLUMN CSS GRID WITH ANIMATIONS */
 .project-grid {
-  display: block !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
   position: relative !important;
-  overflow: hidden !important;
   width: 100% !important;
-  min-height: 720px !important;
 }
 
-/* PROJECT CARD DEFAULT STYLES */
+/* PROJECT CARD STYLES */
 .project-card {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: calc(33.333333% - 16px) !important;
-  margin-bottom: 0 !important;
-  box-sizing: border-box !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 100% !important;
   background: white !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--radius) !important;
   overflow: hidden !important;
   box-shadow: 0 4px 15px #172a1c08 !important;
-  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 400ms ease !important;
-  will-change: transform, opacity !important;
   height: 410px !important;
-  display: flex;
-  flex-direction: column !important;
-}
-
-/* SHUFFLE.JS VISIBILITY STATES */
-.project-card.shuffle-item--hidden {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-.project-card.shuffle-item--visible {
   display: flex !important;
+  flex-direction: column !important;
+  
+  /* Smooth Filter & Fade Animation States */
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 400ms cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 400ms ease !important;
+  will-change: opacity, transform;
+}
+
+/* FILTER HIDDEN ANIMATION */
+.project-card.is-hidden {
+  opacity: 0 !important;
+  transform: scale(0.92) !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.project-card.is-visible {
   opacity: 1 !important;
+  transform: scale(1) !important;
   visibility: visible !important;
   pointer-events: auto !important;
 }
@@ -205,7 +214,7 @@ button{font:inherit}
   .hero-grid{grid-template-columns:1fr .65fr;gap:20px}
   .about-grid{grid-template-columns:1fr;gap:28px}
   .about-photo-wrapper{max-width:280px;margin:0 auto}
-  .project-card{width:calc(50% - 12px) !important;height:390px !important;}
+  .project-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .footer-main{grid-template-columns:1fr 1fr}
   .footer-quote{grid-column:1/-1;text-align:center}
 }
@@ -230,7 +239,7 @@ button{font:inherit}
   .seal-frame{width:170px}
   .hero-bottom{margin-top:35px;gap:10px;justify-content:flex-start}
   .section-pad{padding:62px 0}
-  .project-card{width:100% !important;height:auto !important;}
+  .project-grid { grid-template-columns: 1fr !important; }
   .footer-main{grid-template-columns:1fr;gap:20px;text-align:center}
   .footer-brand{justify-content:center}
   .footer-quote{grid-column:auto}

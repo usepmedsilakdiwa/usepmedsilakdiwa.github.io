@@ -1,4 +1,4 @@
-/* Native JavaScript: Guaranteed Animated Filtering */
+/* Native JavaScript: Filter with Smooth Scale & Fade Animation */
 (() => {
   "use strict";
 
@@ -24,29 +24,13 @@
   const filterButtons = document.querySelectorAll(".filter-button");
   const cards = gridElement ? Array.from(gridElement.querySelectorAll(".project-card")) : [];
 
-  let shuffleInstance = null;
+  // Initialize cards as visible with a nice load-in stagger
+  cards.forEach((card, index) => {
+    card.classList.add("is-visible");
+    card.style.transitionDelay = `${index * 40}ms`;
+  });
 
-  // Attempt to initialize Shuffle.js
-  if (gridElement && window.Shuffle) {
-    try {
-      shuffleInstance = new window.Shuffle(gridElement, {
-      itemSelector: ".project-card",
-      speed: 450,
-      easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-      gutterWidth: 24, // Matches the spacing between columns
-      columnThreshold: 0.01,
-      useTransforms: true,
-      filterMode: window.Shuffle.FilterMode.ANY
-      });
-      console.log("🟢 Shuffle.js loaded and active!");
-    } catch (e) {
-      console.warn("⚠️ Shuffle initialization error:", e);
-    }
-  } else {
-    console.log("🟡 window.Shuffle not detected. Using guaranteed CSS transition animation fallback.");
-  }
-
-  // Filter button event listeners
+  // Filter button event listeners with animated transitions
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
       const filterGroup = button.dataset.group || "all";
@@ -57,38 +41,21 @@
         btn.setAttribute("aria-pressed", String(isActive));
       });
 
-      if (shuffleInstance) {
-        // Use Shuffle.js if available
-        if (filterGroup === "all") {
-          shuffleInstance.filter(window.Shuffle.ALL_ITEMS);
-        } else {
-          shuffleInstance.filter(filterGroup);
-        }
-      } else {
-        // GUARANTEED ANIMATED FALLBACK (Smooth Fade & Scale)
-        cards.forEach(card => {
-          const groupsAttr = card.getAttribute("data-groups") || "";
-          const matches = filterGroup === "all" || groupsAttr.includes(filterGroup);
+      let visibleCounter = 0;
+      cards.forEach(card => {
+        const groupsAttr = card.getAttribute("data-groups") || "";
+        const matches = filterGroup === "all" || groupsAttr.includes(filterGroup);
 
-          if (matches) {
-            card.style.display = "";
-            card.style.transition = "opacity 400ms ease, transform 400ms ease";
-            setTimeout(() => {
-              card.style.opacity = "1";
-              card.style.transform = "scale(1)";
-            }, 20);
-          } else {
-            card.style.transition = "opacity 300ms ease, transform 300ms ease";
-            card.style.opacity = "0";
-            card.style.transform = "scale(0.9)";
-            setTimeout(() => {
-              if (card.style.opacity === "0") {
-                card.style.display = "none";
-              }
-            }, 300);
-          }
-        });
-      }
+        if (matches) {
+          card.classList.remove("is-hidden");
+          card.style.transitionDelay = `${visibleCounter * 50}ms`;
+          card.classList.add("is-visible");
+          visibleCounter++;
+        } else {
+          card.classList.remove("is-visible");
+          card.classList.add("is-hidden");
+        }
+      });
     });
   });
 
