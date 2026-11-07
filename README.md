@@ -1,40 +1,24 @@
-# Thomson - a sleek and Bootstrap portfolio template that highlights your work effectively.
-#### Preview
+# SILAKDIWA — Physical Diagnosis E-Portfolio
 
- - [Demo](https://themewagon.github.io/thomson/)
+A personal academic e-portfolio documenting my learning journey in **Physical Diagnosis** at the **University of Southeastern Philippines – School of Medicine**.
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/thomson/)
+SILAKDIWA showcases selected academic projects, practical activities, clinical skills, and reflections throughout my medical education.
 
-## Getting Started
+### Features
+- Responsive and user-friendly design
+- USEP-inspired visual identity
+- Organized project gallery
+- Individual project documentation pages
+- Lightweight animations and interactive elements
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/thomson.git
-```
-2. Install Dependencies
-```
-npm i
-```
-3. Run the development server:
+### Built With
+- HTML5
+- CSS3
+- JavaScript
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-## Author 
-```
-Design and code is completely written by Themefisher and development team. 
-```
+**Created by:** Zandro Justine F. Labasano  
+**Institution:** University of Southeastern Philippines  
+**Program:** Doctor of Medicine
 
-## License
-
- - Design and Code is Copyright &copy; <a href="https://themefisher.com/" target="_blank">Themefisher</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>

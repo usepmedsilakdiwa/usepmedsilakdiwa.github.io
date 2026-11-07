@@ -1,7 +1,24 @@
-# Silakdiwa Portfolio v2 (Revised)
+# SILAKDIWA — Physical Diagnosis E-Portfolio
 
-This zip package contains the revised styles and scripts for the Silakdiwa Portfolio.
+A personal academic e-portfolio documenting my learning journey in **Physical Diagnosis** at the **University of Southeastern Philippines – School of Medicine**.
 
-## Key Changes
-- **CSS (`css/silakdiwa.css`)**: Global `box-sizing: border-box`, `overflow-x: hidden` fixes, GPU-accelerated smooth transition tokens, scroll-reveal utilities, and card hover effects.
-- **JavaScript (`js/main.js`)**: `IntersectionObserver` setup for high-performance scroll reveal and dynamic mobile navigation toggle behavior.
+SILAKDIWA showcases selected academic projects, practical activities, clinical skills, and reflections throughout my medical education.
+
+### Features
+- Responsive and user-friendly design
+- USEP-inspired visual identity
+- Organized project gallery
+- Individual project documentation pages
+- Lightweight animations and interactive elements
+
+### Built With
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+**Created by:** Zandro Justine F. Labasano  
+**Institution:** University of Southeastern Philippines  
+**Program:** Doctor of Medicine
+
