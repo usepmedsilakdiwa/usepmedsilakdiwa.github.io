@@ -1,4 +1,4 @@
-/* Native JavaScript: Filter with Smooth Scale & Fade Animation */
+/* Native JavaScript: Keyframe Animation Reset & Replay on Every Tab Click */
 (() => {
   "use strict";
 
@@ -24,13 +24,13 @@
   const filterButtons = document.querySelectorAll(".filter-button");
   const cards = gridElement ? Array.from(gridElement.querySelectorAll(".project-card")) : [];
 
-  // Initialize cards as visible with a nice load-in stagger
+  // Initial entrance animation on load
   cards.forEach((card, index) => {
     card.classList.add("is-visible");
-    card.style.transitionDelay = `${index * 40}ms`;
+    card.style.animationDelay = `${index * 40}ms`;
   });
 
-  // Filter button event listeners with animated transitions
+  // Filter button event listeners with forced keyframe reset
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
       const filterGroup = button.dataset.group || "all";
@@ -41,20 +41,30 @@
         btn.setAttribute("aria-pressed", String(isActive));
       });
 
-      let visibleCounter = 0;
+      // Step 1: Strip classes and force DOM reflow so the browser forgets the old animation state
       cards.forEach(card => {
-        const groupsAttr = card.getAttribute("data-groups") || "";
-        const matches = filterGroup === "all" || groupsAttr.includes(filterGroup);
+        card.style.animation = "none";
+        card.classList.remove("is-visible", "is-hidden");
+        void card.offsetWidth; // Force reflow
+      });
 
-        if (matches) {
-          card.classList.remove("is-hidden");
-          card.style.transitionDelay = `${visibleCounter * 50}ms`;
-          card.classList.add("is-visible");
-          visibleCounter++;
-        } else {
-          card.classList.remove("is-visible");
-          card.classList.add("is-hidden");
-        }
+      // Step 2: Re-apply matching filter with staggered delays and fresh keyframe animation
+      requestAnimationFrame(() => {
+        let visibleCounter = 0;
+        cards.forEach(card => {
+          const groupsAttr = card.getAttribute("data-groups") || "";
+          const matches = filterGroup === "all" || groupsAttr.includes(filterGroup);
+
+          if (matches) {
+            card.classList.remove("is-hidden");
+            card.style.animation = ""; // Restore CSS keyframe
+            card.style.animationDelay = `${visibleCounter * 45}ms`;
+            card.classList.add("is-visible");
+            visibleCounter++;
+          } else {
+            card.classList.add("is-hidden");
+          }
+        });
       });
     });
   });

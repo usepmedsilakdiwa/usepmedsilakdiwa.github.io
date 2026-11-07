@@ -122,7 +122,7 @@ button{font:inherit}
 .filter-button:hover,.filter-button.is-active{background:var(--red);border-color:var(--red);color:white}
 .filter-button:focus-visible,.nav-link:focus-visible,.button:focus-visible,a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 
-/* BULLETPROOF 3-COLUMN CSS GRID WITH ANIMATIONS */
+/* BULLETPROOF 3-COLUMN CSS GRID */
 .project-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
@@ -131,7 +131,19 @@ button{font:inherit}
   width: 100% !important;
 }
 
-/* PROJECT CARD STYLES */
+/* KEYFRAME ANIMATION FOR REPLAYABLE ENTRANCES */
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* PROJECT CARD BASE STYLES */
 .project-card {
   position: relative !important;
   top: auto !important;
@@ -145,36 +157,20 @@ button{font:inherit}
   height: 410px !important;
   display: flex !important;
   flex-direction: column !important;
-  
-  /* Smooth Filter & Fade Animation States */
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 400ms cubic-bezier(0.16, 1, 0.3, 1), 
-              visibility 400ms ease !important;
-  will-change: opacity, transform;
 }
 
-/* FILTER HIDDEN ANIMATION */
+/* FILTER HIDDEN STATE */
 .project-card.is-hidden {
+  display: none !important;
   opacity: 0 !important;
-  transform: scale(0.92) !important;
   pointer-events: none !important;
   visibility: hidden !important;
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  border: none !important;
-  padding: 0 !important;
 }
 
+/* FILTER VISIBLE STATE WITH KEYFRAME RE-TRIGGER */
 .project-card.is-visible {
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
+  display: flex !important;
+  animation: cardIn 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .project-thumb{display:block;position:relative;overflow:hidden;aspect-ratio:1.75;background:#e9ece6;flex-shrink:0}
