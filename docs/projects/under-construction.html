@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a90808">
+  <meta name="description" content="SILAKDIWA — Physical Diagnosis E-Portfolio under maintenance.">
+  <title>Under Construction | SILAKDIWA</title>
+  <link rel="stylesheet" href="../css/silakdiwa.css">
+  <style>
+    .construction-hero {
+      min-height: calc(100vh - 150px);
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+    }
+    .construction-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 48px;
+      box-shadow: 0 16px 40px rgba(23,42,28,.08);
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff8e6;
+      color: #8a6d00;
+      border: 1px solid #ffe8a3;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background: #d99b00;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(217,155,0,0.7);
+      animation: status-pulse-anim 1.8s infinite;
+    }
+    .construction-card h1 {
+      font: 800 clamp(32px, 4.5vw, 48px)/1.15 var(--heading);
+      color: var(--green);
+      margin: 0 0 16px;
+    }
+    .construction-card h1 span {
+      color: var(--red);
+    }
+    .construction-card p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .progress-bar-container {
+      background: #eef0ea;
+      border-radius: 20px;
+      height: 12px;
+      overflow: hidden;
+      margin: 0 auto 32px;
+      max-width: 480px;
+      border: 1px solid var(--line);
+    }
+    .progress-bar-fill {
+      width: 75%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--green) 0%, var(--red) 100%);
+      border-radius: 20px;
+      transition: width 1s ease;
+    }
+    .action-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    @keyframes status-pulse-anim {
+      0% { box-shadow: 0 0 0 0 rgba(217,155,0,0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(217,155,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(217,155,0,0); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <nav class="nav-shell container" aria-label="Main navigation">
+    <a class="brand" href="../index.html" aria-label="SILAKDIWA home">
+      <img src="../images/usep-seal.png" alt="USEP seal" class="brand-seal">
+      <span class="brand-copy"><strong>SILAKDIWA</strong><small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small></span>
+    </a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero construction-hero">
+    <div class="hero-shape hero-shape-red" aria-hidden="true"></div>
+    <div class="hero-shape hero-shape-green" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="construction-card reveal is-visible">
+        <div class="seal-frame" style="width: 140px; margin: 0 auto 28px;">
+          <img src="../images/usep-seal.png" alt="USEP Seal">
+        </div>
+        
+        <div class="status-badge">
+          <span class="status-pulse"></span>
+          <span>System Maintenance & Update in Progress</span>
+        </div>
+
+        <h1>Module Under <span>Construction</span></h1>
+        
+        <p>The academic learning modules and interactive medical portfolio contents are currently being updated to integrate new laboratory findings and clinical evaluations.</p>
+
+        <div class="progress-bar-container" title="75% Complete">
+          <div class="progress-bar-fill"></div>
+        </div>
+
+        <div class="action-row">
+          <a class="button button-red" href="../index.html"><span>←</span> Return to main portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-main">
+    <a class="brand footer-brand" href="#top" aria-label="SILAKDIWA home">
+      <img class="brand-seal footer-seal" src="./images/usep-seal.png" alt="USEP seal">
+      <span class="brand-copy"><strong>SILAKDIWA</strong><small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small></span>
+    </a>
+    <div class="footer-student">
+      <strong>Zandro Justine F. Labasano</strong>
+      <span>University of Southeastern Philippines · School of Medicine</span>
+      <span>Contact: 09504586395 | zjflabasano03202500101@usep.edu.ph</span>
+    </div>
+    <p class="footer-quote">“To see, to listen, to feel,<br>and to understand.”<small>— The art of physical diagnosis</small></p>
+  </div>
+  <div class="footer-bottom">© <span id="current-year">2026</span> SILAKDIWA. Academic E-Portfolio.</div>
+</footer>
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
