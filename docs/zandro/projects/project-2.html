@@ -1,35 +1,142 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project 02 | SILAKDIWA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clinical Case on Sensitivity and Specificity | SILAKDIWA</title>
   <link rel="stylesheet" href="../css/silakdiwa.css">
+  <style>
+    /* Page-specific additions; the existing SILAKDIWA theme remains in control. */
+    .case-details { margin: 18px 0 30px; }
+    .case-details p { max-width: 780px; }
+    .case-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+    .case-fact {
+      padding: 15px 17px;
+      border: 1px solid rgba(120, 120, 120, .24);
+      border-radius: 10px;
+      background: rgba(255,255,255,.035);
+    }
+    .case-fact strong { display: block; margin-bottom: 5px; }
+    .report-viewer {
+      width: 100%;
+      height: min(78vh, 900px);
+      min-height: 480px;
+      display: block;
+      border: 1px solid rgba(120, 120, 120, .28);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .report-actions {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 16px 0 0;
+    }
+    .report-note { margin-top: 10px; font-size: .92rem; opacity: .8; }
+    @media (max-width: 640px) {
+      .case-facts { grid-template-columns: 1fr; }
+      .report-viewer { min-height: 420px; height: 65vh; }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header"><nav class="nav-shell container">
-  <a class="brand" href="../index.html"><img class="brand-seal" src="../images/usep-seal.png" alt="USEP seal"><span class="brand-copy"><strong>SILAKDIWA</strong><small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small></span></a>
-  <a class="nav-link" href="../index.html#projects">← All projects</a>
-</nav></header>
+<header class="site-header">
+  <nav class="nav-shell container">
+    <a class="brand" href="../index.html">
+      <img class="brand-seal" src="../images/usep-seal.png" alt="USEP seal">
+      <span class="brand-copy">
+        <strong>SILAKDIWA</strong>
+        <small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small>
+      </span>
+    </a>
+    <a class="nav-link" href="../index.html#projects">← All projects</a>
+  </nav>
+</header>
+
 <main>
-  <section class="project-banner"><div class="container">
-    <p class="eyebrow">SILAKDIWA / ACADEMIC PROJECTS / PROJECT 02</p>
-    <h1>General Physical Examination</h1>
-    <p>Physical Diagnosis · University of Southeastern Philippines School of Medicine</p>
-  </div></section>
-  <section class="section-pad"><div class="container" style="max-width:900px">
-    <p class="eyebrow">PROJECT OVERVIEW</p>
-    <h2 style="font-family:var(--heading);color:var(--green)">General Physical Examination</h2>
-    <p>This activity focuses on developing the fundamental skills required to obtain a comprehensive health history through structured, patient-centered interviewing.</p>
-    <h3>Learning Objectives</h3>
-    <ul><li>Establish effective and respectful patient communication.</li><li>Obtain and organize relevant subjective patient information.</li><li>Use appropriate questions and interviewing techniques.</li><li>Document the health history clearly and systematically.</li></ul>
-    <h3>Activity Documentation</h3>
-    <p>Replace this section with your actual output, interview script, case material, or photographs of your work.</p>
-    <div class="documentation-placeholder"><strong>Insert project output here</strong><span>Update this area with your project-specific content.</span></div>
-    <h3 style="margin-top:35px">Reflection</h3>
-    <p>[Add your personal insights, challenges, and key takeaways.]</p>
-    <a class="button button-red" href="../index.html#projects">← Back to projects</a>
-  </div></section>
+  <section class="project-banner">
+    <div class="container">
+      <p class="eyebrow">SILAKDIWA / ACADEMIC PROJECTS / ACTIVITY 02</p>
+      <h1>Clinical Case on Sensitivity and Specificity</h1>
+      <p>Physical Diagnosis · University of Southeastern Philippines School of Medicine</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container" style="max-width: 960px">
+      <section class="case-details" aria-labelledby="case-title">
+        <p class="eyebrow">FEATURED CASE · PDX GROUP 3</p>
+        <h2 id="case-title" style="font-family:var(--heading);color:var(--green)">
+          COPD Screening via Spirometry in a 60-Year-Old Male
+        </h2>
+        <p>
+          This clinical case analysis evaluates the diagnostic accuracy of routine spirometry
+          screening for chronic obstructive pulmonary disease (COPD) in a 60-year-old male with
+          a history of smoking. Using a population model of 1,000 high-risk patients at a 20%
+          prevalence rate, the report breaks down true and false diagnostic outcomes.
+        </p>
+        <div class="case-facts">
+          <div class="case-fact">
+            <strong>Patient profile &amp; risk</strong>
+            60-year-old asymptomatic male with a smoking history (20% group prevalence)
+          </div>
+          <div class="case-fact">
+            <strong>Diagnostic test</strong>
+            Routine spirometry screening for airflow limitation
+          </div>
+          <div class="case-fact">
+            <strong>Test accuracy metrics</strong>
+            80% Sensitivity (160 TP, 40 FN) · 85% Specificity (680 TN, 120 FP)
+          </div>
+          <div class="case-fact">
+            <strong>Clinical conclusion</strong>
+            Effective initial screening tool, though findings require clinical correlation
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="report-title" style="margin-top:42px">
+        <p class="eyebrow">WRITTEN OUTPUT</p>
+        <h2 id="report-title" style="font-family:var(--heading);color:var(--green)">Case Analysis Report</h2>
+        <p>
+          Read the complete clinical case analysis below. It outlines the patient background,
+          spirometry test parameters, population calculations, and clinical implications.
+        </p>
+        <iframe
+          class="report-viewer"
+          src="../files/Labasano-PDXAct2.pdf"
+          title="Written report: Clinical Case on Sensitivity and Specificity">
+        </iframe>
+        <div class="report-actions">
+          <a class="button button-red"
+             href="../files/Labasano-PDXAct2.pdf"
+             target="_blank" rel="noopener">
+            Open PDF
+          </a>
+          <a class="button"
+             href="../files/Labasano-PDXAct2.pdf"
+             download>
+            Download Case Report
+          </a>
+        </div>
+        <p class="report-note">
+          If the embedded preview is unavailable in your browser, use Open PDF to view the report.
+        </p>
+      </section>
+
+      <a class="button button-red" href="../index.html#projects" style="margin-top:36px">
+        ← Back to projects
+      </a>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><div class="footer-bottom">© <span id="current-year"></span> SILAKDIWA · Zandro Justine F. Labasano</div></footer>
+
+<footer class="site-footer">
+  <div class="footer-bottom">© <span id="current-year"></span> SILAKDIWA · Zandro Justine F. Labasano</div>
+</footer>
 <script src="../js/main.js" defer></script>
-</body></html>
+</body>
+</html>
