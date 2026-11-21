@@ -1,35 +1,128 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project 03 | SILAKDIWA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vital Signs Taking and BMI Assessment | SILAKDIWA</title>
   <link rel="stylesheet" href="../css/silakdiwa.css">
+  <style>
+    /* Page-specific additions; the existing SILAKDIWA theme remains in control. */
+    .case-details { margin: 28px 0 30px; }
+    .case-details p { max-width: 780px; }
+    .case-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+    .case-fact {
+      padding: 15px 17px;
+      border: 1px solid rgba(120, 120, 120, .24);
+      border-radius: 10px;
+      background: rgba(255,255,255,.035);
+    }
+    .case-fact strong { display: block; margin-bottom: 5px; }
+    .media-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #111;
+      box-shadow: 0 10px 28px rgba(0,0,0,.14);
+    }
+    .media-frame iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    @media (max-width: 640px) {
+      .case-facts { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header"><nav class="nav-shell container">
-  <a class="brand" href="../index.html"><img class="brand-seal" src="../images/usep-seal.png" alt="USEP seal"><span class="brand-copy"><strong>SILAKDIWA</strong><small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small></span></a>
-  <a class="nav-link" href="../index.html#projects">← All projects</a>
-</nav></header>
+<header class="site-header">
+  <nav class="nav-shell container">
+    <a class="brand" href="../index.html">
+      <img class="brand-seal" src="../images/usep-seal.png" alt="USEP seal">
+      <span class="brand-copy">
+        <strong>SILAKDIWA</strong>
+        <small>PHYSICAL DIAGNOSIS E-PORTFOLIO</small>
+      </span>
+    </a>
+    <a class="nav-link" href="../index.html#projects">← All projects</a>
+  </nav>
+</header>
+
 <main>
-  <section class="project-banner"><div class="container">
-    <p class="eyebrow">SILAKDIWA / ACADEMIC PROJECTS / PROJECT 03</p>
-    <h1>Systemic Examination</h1>
-    <p>Physical Diagnosis · University of Southeastern Philippines School of Medicine</p>
-  </div></section>
-  <section class="section-pad"><div class="container" style="max-width:900px">
-    <p class="eyebrow">PROJECT OVERVIEW</p>
-    <h2 style="font-family:var(--heading);color:var(--green)">Systemic Examination</h2>
-    <p>This activity focuses on developing the fundamental skills required to obtain a comprehensive health history through structured, patient-centered interviewing.</p>
-    <h3>Learning Objectives</h3>
-    <ul><li>Establish effective and respectful patient communication.</li><li>Obtain and organize relevant subjective patient information.</li><li>Use appropriate questions and interviewing techniques.</li><li>Document the health history clearly and systematically.</li></ul>
-    <h3>Activity Documentation</h3>
-    <p>Replace this section with your actual output, interview script, case material, or photographs of your work.</p>
-    <div class="documentation-placeholder"><strong>Insert project output here</strong><span>Update this area with your project-specific content.</span></div>
-    <h3 style="margin-top:35px">Reflection</h3>
-    <p>[Add your personal insights, challenges, and key takeaways.]</p>
-    <a class="button button-red" href="../index.html#projects">← Back to projects</a>
-  </div></section>
+  <section class="project-banner">
+    <div class="container">
+      <p class="eyebrow">SILAKDIWA / ACADEMIC PROJECTS / ACTIVITY 03</p>
+      <h1>Vital Signs Taking and BMI Assessment</h1>
+      <p>Physical Diagnosis · University of Southeastern Philippines School of Medicine</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container" style="max-width: 960px">
+      <section aria-labelledby="video-title">
+        <p class="eyebrow">MAIN PRESENTATION</p>
+        <h2 id="video-title" style="font-family:var(--heading);color:var(--green)">Vital Signs Demonstration Video</h2>
+        <div class="media-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/5hGKHDAkP3o"
+            title="Vital Signs Taking and BMI Assessment — Activity 3"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <section class="case-details" aria-labelledby="case-title">
+        <p class="eyebrow">CLINICAL SKILLS DEMONSTRATION · LABORATORY ACTIVITY</p>
+        <h2 id="case-title" style="font-family:var(--heading);color:var(--green)">
+          Systematic Measurement of Vital Signs and Anthropometric BMI
+        </h2>
+        <p>
+          This video demonstration presents a paired clinical role-play of core vital sign
+          assessments and body mass index (BMI) computation. It covers pre-procedure
+          preparation and consent, palpatory and auscultatory blood pressure measurement,
+          one-minute heart and respiratory rate evaluation, temperature measurement, and
+          height-and-weight BMI determination with patient explanation and counseling.
+        </p>
+        <div class="case-facts">
+          <div class="case-fact">
+            <strong>Patient preparation &amp; consent</strong>
+            Greeting, introduction, identifying data, procedure explanation, consent, and pre-test rest checks for exertion, smoking, or caffeine
+          </div>
+          <div class="case-fact">
+            <strong>Blood pressure assessment</strong>
+            Palpatory estimation (+30 mmHg maximum inflation), cuff placement above the antecubital crease, slow deflation, and systolic/diastolic interpretation
+          </div>
+          <div class="case-fact">
+            <strong>Cardiopulmonary &amp; temperature</strong>
+            One-minute radial pulse and respiratory rate/rhythm/depth/effort checks alongside tympanic or axillary temperature measurement
+          </div>
+          <div class="case-fact">
+            <strong>BMI &amp; patient communication</strong>
+            Height and weight measurement, BMI calculation, clear explanation of findings, patient questions, and closing etiquette
+          </div>
+        </div>
+      </section>
+
+      <a class="button button-red" href="../index.html#projects" style="margin-top:12px">
+        ← Back to projects
+      </a>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><div class="footer-bottom">© <span id="current-year"></span> SILAKDIWA · Zandro Justine F. Labasano</div></footer>
+
+<footer class="site-footer">
+  <div class="footer-bottom">© <span id="current-year"></span> SILAKDIWA · Zandro Justine F. Labasano</div>
+</footer>
 <script src="../js/main.js" defer></script>
-</body></html>
+</body>
+</html>
